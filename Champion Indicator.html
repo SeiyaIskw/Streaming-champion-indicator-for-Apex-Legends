@@ -1,0 +1,75 @@
+<head>
+  <title>Champion Indicator</title>
+  <style>
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: Helvetica ;
+	}
+
+	.main {
+	  display: flex;
+	  justify-content: center;
+	  text-align: center;
+	  margin: 0;
+	  padding: 0;
+	  color: rgba(255,0,0,0.9);
+	}
+
+	h1 {
+	  background-color: rgba(0,0,0,0.5);
+	  margin: 0;
+	  padding: 0px 10px;
+	  border-top: 1px white solid;
+	  border-bottom: 1px white solid;
+	}
+
+	#apex {
+		width: 20px;
+		background-image: url("images.jpg");
+		background-size:cover;
+	}
+	
+	.end {
+	  width: 3em;
+	}
+
+
+	#left {
+	  border-top: 1px white solid;
+	  background: linear-gradient(to top right, transparent 50%, rgba(0,0,0,0.5) 50%);
+	}
+
+	#right {
+	  border-top: 1px white solid;
+	  background: linear-gradient(to top left, transparent 50%, rgba(0,0,0,0.5) 50%);
+	}
+  </style>
+</head>
+<body>
+<div class="main">
+  <div id="left" class="end"></div>
+  <h1>CHAMPION</h1>
+  <h1 id="apex"></h1>
+  <h1 id="count">0</h1>
+  <div id="right" class="end"></div>
+</div>
+  <script type="text/javascript">
+	let count = document.getElementById("count");
+	let apex = document.getElementById("apex")
+
+	count.innerHTML = 0;
+
+	count.onclick = function(){
+	  count.innerHTML = +count.innerHTML + 1;
+	}
+
+	apex.onclick = function() {
+	  if (count.innerHTML !== "0"){
+	  count.innerHTML = +count.innerHTML - 1;
+	  } else {
+		count.innerHTML = 0
+	  }
+	}
+  </script>
+</body>
